@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Insunuclear v0.1</title>
+<link rel="stylesheet" href="styles.css">
+
+<script src="js/break_eternity.js"></script>
+<script src="js/formulas.js"></script>
+<script src="js/format.js"></script>
+<script src="js/data.js"></script>
+<script src="js/currencies.js"></script>
+<script src="js/element.js"></script>
+<script src="js/tabs.js"></script>
+<script src="js/resets.js"></script>
+<script src="js/main.js"></script>
+<script src = "js/neutron_star.js"></script>
+<script src = "js/automation.js"></script>
+
+<body onload="loadGame()">
+    <div id = "currs-top"></div>
+    <div id="tabs"></div>
+    <div id="br"></div>
+
+    <div id = "options-tab">
+        <p>Saving</p>
+        <button id = "save" onclick="save()">Save</button>
+        <button id = "export" onclick="export_copy()">Export to clipboard</button>
+        <button id = "import" onclick="importy()">Import from prompt</button>
+        <button id = "wipe" onclick="wipeConfirm()">WIPE</button>
+
+        <div id="br"></div>
+
+        <p>Notations</p>
+        <button id = "notation" onclick="player.options.notation = 'st'">Standard</button>
+        <button id = "notation" onclick="player.options.notation = 'sc'">Scientific</button>
+        <button id = "notation" onclick="player.options.notation = 'mixed_sc'">Mixed Scientific</button>
+
+        <div id="br"></div>
+
+        <p>Confirmations</p>
+        <button id = "toggle" onclick="player.options.confirm.neutron_star = !player.options.confirm.neutron_star">Neutron Star comfirmation: off</button>
+
+        <p>Automation</p>
+        <button id = "auto-generator" onclick="player.auto.generators = !player.auto.generators">Automatically buy all normal generators: off</button>
+    </div>
+
+    <div id="main-tab">
+        <p id = "planet-amount">You have blown up 0 planets</p>
+        <div class="progress-wrapper">
+            <div class="progress-container">
+                <div class="progress-fill"></div>
+                <span class="progress-text"></span>
+            </div>
+        </div>
+
+        <br>
+
+        <div id = "power-amount">You have <glow>67 FE</glow> of nuclear power</div>
+
+        <br>
+
+        <button id = "rp-button" onclick = "rp_reset()">Start generating nuclear power</button>
+
+        <div id = "br"></div>
+        <div id = "generator-div">
+            <p id = "generator-power">You have <glow>100,000,000,000</glow> generator power, multiplying nuclear power gain by <b>x100</b></p>
+            <button onclick="bmg()">[M] Buy Max</button>
+
+            <div id = "generators"></div>
+        </div>
+    </div>
+    <div id = "neutron-star-upgrades-tab">
+        <div id = "br"></div>
+        <div id = "ns-upgrades"></div>
+    </div>
+    <div id = "neutronic-generators-tab">
+        <div id = "br"></div>
+        <p id = "neutronic-power">You have <glow>10,000</glow> neutronic power, boosting all generator multipliers by <b>x23.2</b></p>
+        <div id = "neutronic-generators"></div>
+    </div>
+</body>
+
+<textarea id="copy" style="position: absolute; left: -99999px;"></textarea>
+
+<p>Insunuclear public beta test 0.0</p>
+</html>
